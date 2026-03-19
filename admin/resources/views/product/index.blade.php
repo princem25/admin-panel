@@ -13,8 +13,9 @@
 
         {{-- Create Button --}}
         <div class="mb-5">
+            <h5>{{$greeting}}</h5>
             <a href="{{ route('products.create') }}">
-                <button class="px-4 py-2 bg-black text-white rounded hover:bg-gray-800">
+                <button class="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 mt-10">
                     + Create Product
                 </button>
             </a>

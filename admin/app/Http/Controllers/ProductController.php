@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+ use App\Services\greetingService;
+use App\Facades\Greeting;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\FormvalidRequest;
 use App\Models\Product;
@@ -14,8 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
+       $greeting =  Greeting::greet('Product Section');
         $products = Product::all();
-        return view('product.index', compact('products'));
+        return view('product.index', compact('products','greeting'));
     }
 
     /**
