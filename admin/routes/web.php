@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\company;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,5 @@ require __DIR__.'/auth.php';
 Route::prefix('admin')->middleware('role:admin')->group(function () {
     Route::resource('products', ProductController::class);
 });
+
+Route::get('/company',[company::class,'Info']);
